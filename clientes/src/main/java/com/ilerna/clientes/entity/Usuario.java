@@ -17,7 +17,6 @@ public class Usuario {
         this.Apellido = Apellido;
     }
 
-
     private String nombre;
     private String Apellido;
 
