@@ -1,4 +1,9 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package com.ilerna.clientes.Controller;
+
 import com.ilerna.clientes.entity.Cliente;
 import com.ilerna.clientes.service.GestorClientes;
 import org.springframework.stereotype.Controller;
@@ -9,8 +14,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Controller
-@RequestMapping("/cliente")
-public class ControllerCliente {
+@RequestMapping("/usuario")
+public class ControllerUsuario {
     GestorClientes ge = new GestorClientes ();
     @GetMapping("/")
     public String crud(Model model){

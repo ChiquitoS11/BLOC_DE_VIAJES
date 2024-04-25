@@ -4,36 +4,41 @@
  */
 package com.ilerna.clientes.service;
 
+
 import com.ilerna.clientes.database.Conexion;
 import com.ilerna.clientes.entity.Fabricante;
+import com.ilerna.clientes.entity.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 /**
  *
  * @author Alumno
  */
-public class GestorFabricantes {
+public class GestorUsuario {
+
     Conexion c = new Conexion();
     
-    public List<Fabricante> listar() throws SQLException {
+    public List<Usuario> listar() throws SQLException {
         Statement consulta = c.conectar().createStatement();
         ResultSet rs = consulta.executeQuery("SELECT * FROM fabricante");
-        List<Fabricante> lista = new ArrayList<>();
+        List<Usuario> usuarios = new ArrayList<>();
 
         while (rs.next()) {
-            Fabricante p = new Fabricante(
+            Usuario u = new Usuario(
                     rs.getInt("id"),
                     rs.getString("nombre"),
-                    rs.getInt("edad")
+                    rs.getString("apellidos")
             );
-            lista.add(p);
+            usuarios.add(u);
         }
         rs.close();
         consulta.close();
-        return lista;
+        return usuarios;
     }
 }
