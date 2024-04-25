@@ -10,6 +10,14 @@ package com.ilerna.clientes.entity;
  */
 public class Usuario {
     private int id; //El id no va en el construcor porque es AI.
+
+    public Usuario(int id, String nombre, String Apellido) {
+        this.id = id;
+        this.nombre = nombre;
+        this.Apellido = Apellido;
+    }
+=======
+
     private String nombre;
     private String Apellido;
 
