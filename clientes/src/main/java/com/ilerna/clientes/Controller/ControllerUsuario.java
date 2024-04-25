@@ -4,8 +4,7 @@
  */
 package com.ilerna.clientes.Controller;
 
-import com.ilerna.clientes.entity.Cliente;
-import com.ilerna.clientes.service.GestorClientes;
+import com.ilerna.clientes.service.GestorUsuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,74 +13,21 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Controller
-@RequestMapping("/usuario")
+@RequestMapping("/fabricante")
 public class ControllerUsuario {
-    GestorClientes ge = new GestorClientes ();
+
+    GestorUsuario gu = new GestorUsuario();
+
     @GetMapping("/")
-    public String crud(Model model){
-        String valorfinal="./cliente/listarcliente";
+    public String crud(Model model) {
+        String valorfinal = "./usuario/listarusuario";
         try {
-            model.addAttribute("clientes", ge.listar());
+            model.addAttribute("usuarios", gu.listar());
         } catch (SQLException ex) {
             Logger.getLogger(ControllerCliente.class.getName()).log(Level.SEVERE, null, ex);
-            valorfinal="error";
+            valorfinal = "error";
         }
         return valorfinal;
     }
-    @GetMapping("/alta")
-    public String greetingForm(Model model) {
-        model.addAttribute("cliente", new Cliente());
-        return "./cliente/altacliente";
-    }
-    @PostMapping("/alta")
-    public String greetingSubmit(@ModelAttribute Cliente cliente, Model model) {
-        String valorfinal="redirect:/cliente/";
-        try {
-            ge.alta(cliente);
-            try {
-                model.addAttribute("clientes", ge.listar());
-            } catch (SQLException ex) {
-                Logger.getLogger(ControllerCliente.class.getName()).log(Level.SEVERE, null, ex);
-                valorfinal="error";
-            }
-        } catch (SQLException ex) {
-            valorfinal="error";
-        }
-        return valorfinal;
-    }
-    @GetMapping("/eliminar")
-    public String SubmitB (@RequestParam("codcliente") int id, Model model){
-        String valorfinal="redirect:/cliente/";
-        try {
-            ge.eliminar(id);
-            model.addAttribute("clientes", ge.listar());
-        } catch (SQLException ex) {
-            valorfinal="error";
-        }
-        //return new ModelAndView(valorfinal, model.asMap());
-        return valorfinal;
-    }
-    @GetMapping("/modificar")
-    public String modificar(@RequestParam ("codcliente") int id,Model model){
-        String valorfinal="./cliente/modificarcliente";
-        try {
-            model.addAttribute("cliente", ge.buscar(id));
-        } catch (SQLException ex) {
-            Logger.getLogger(ControllerCliente.class.getName()).log(Level.SEVERE, null, ex);
-            valorfinal="error";
-        }
-        return valorfinal;
-    }
-    @PostMapping("/modificar")
-    public String modificarBBDD (@ModelAttribute Cliente cliente, Model model){
-        String valorfinal="redirect:/cliente/";
-        try {
-            ge.modificar(cliente);
-            model.addAttribute("clientes",ge.listar());
-        } catch (SQLException ex) {
-            Logger.getLogger(ControllerCliente.class.getName()).log(Level.SEVERE, null, ex);
-            valorfinal="error";
-        }
-        return valorfinal;
-    }
+
 }

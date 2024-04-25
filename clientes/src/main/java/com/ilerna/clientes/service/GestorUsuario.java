@@ -26,7 +26,7 @@ public class GestorUsuario {
     
     public List<Usuario> listar() throws SQLException {
         Statement consulta = c.conectar().createStatement();
-        ResultSet rs = consulta.executeQuery("SELECT * FROM fabricante");
+        ResultSet rs = consulta.executeQuery("SELECT * FROM usuario");
         List<Usuario> usuarios = new ArrayList<>();
 
         while (rs.next()) {
@@ -41,4 +41,5 @@ public class GestorUsuario {
         consulta.close();
         return usuarios;
     }
+    //b
 }
