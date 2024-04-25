@@ -22,7 +22,7 @@ public class entrada {
 //    @GetMapping({"/prueba"})
 //    piblic String prueba(Model model){
 //        model.addAtribute("PRUEBA", "SIGO PROBANDO");
-//        return "./prueba"
+//        return "./prueba"wwwwwwwwwwwwwwwwwwww
 //    }
     
 
