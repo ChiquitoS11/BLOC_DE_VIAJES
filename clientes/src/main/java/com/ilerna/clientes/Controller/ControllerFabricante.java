@@ -4,7 +4,6 @@
  */
 package com.ilerna.clientes.Controller;
 
-import com.ilerna.clientes.service.GestorClientes;
 import com.ilerna.clientes.service.GestorFabricantes;
 import java.sql.SQLException;
 import java.util.logging.Level;
