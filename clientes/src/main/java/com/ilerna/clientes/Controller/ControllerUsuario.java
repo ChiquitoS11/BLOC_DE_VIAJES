@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Controller
-@RequestMapping("/cliente")
+@RequestMapping("/usuario")
 public class ControllerUsuario {
     GestorClientes ge = new GestorClientes ();
     @GetMapping("/")
@@ -84,11 +84,4 @@ public class ControllerUsuario {
         }
         return valorfinal;
     }
-=======
-/**
- *
- * @author Alumno
- */
-public class ControllerUsuario {
-    
 }
