@@ -41,5 +41,4 @@ public class GestorUsuario {
         consulta.close();
         return usuarios;
     }
-    //b0
 }
