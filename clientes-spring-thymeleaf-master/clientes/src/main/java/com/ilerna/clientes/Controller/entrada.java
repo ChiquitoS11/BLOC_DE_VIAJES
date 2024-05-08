@@ -19,12 +19,8 @@ public class entrada {
         model.addAttribute("saludo", "hola mundo");
         return "./saludar";
     }
-//    @GetMapping({"/prueba"})
-//    piblic String prueba(Model model){
-//        model.addAtribute("PRUEBA", "SIGO PROBANDO");
-//        return "./prueba"wwwwwwwwwwwwwwwwwwww
-//    }
-    
+
+
 
 
 }
