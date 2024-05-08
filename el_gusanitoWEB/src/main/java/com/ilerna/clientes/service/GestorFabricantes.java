@@ -5,6 +5,7 @@
 package com.ilerna.clientes.service;
 
 import com.ilerna.clientes.database.Conexion;
+import com.ilerna.clientes.entity.Cliente;
 import com.ilerna.clientes.entity.Fabricante;
 import java.sql.ResultSet;
 import java.sql.SQLException;
