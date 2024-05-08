@@ -32,7 +32,7 @@ public class ControllerFabricante {
             Logger.getLogger(ControllerCliente.class.getName()).log(Level.SEVERE, null, ex);
             valorfinal="error";
         }
-        return valorfinal;
+        return valorfinal;  
     }
     
 }
