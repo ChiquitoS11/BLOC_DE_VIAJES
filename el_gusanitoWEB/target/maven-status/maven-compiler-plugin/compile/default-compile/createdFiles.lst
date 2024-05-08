@@ -1,0 +1,9 @@
+com\ilerna\clientes\Controller\ControllerCliente.class
+com\ilerna\clientes\Controller\ControllerFabricante.class
+com\ilerna\clientes\service\GestorClientes.class
+com\ilerna\clientes\entity\Cliente.class
+com\ilerna\clientes\service\GestorFabricantes.class
+com\ilerna\clientes\database\Conexion.class
+com\ilerna\clientes\PaginaWebApplication.class
+com\ilerna\clientes\entity\Fabricante.class
+com\ilerna\clientes\Controller\entrada.class
