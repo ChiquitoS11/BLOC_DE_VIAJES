@@ -1,6 +1,7 @@
 package com.ilerna.clientes.service;
 import com.ilerna.clientes.database.Conexion;
 import com.ilerna.clientes.entity.Cliente;
+//import com.ilerna.clientes.entity.Cliente;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,14 +19,14 @@ public class GestorClientes {
         //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         //String strFechaFormateada = sdf.format(p.getFechaNacimiento());
         // estring de inserción
-        String cadena = "INSERT INTO cliente(nombre, apellido, telefono, correo, direccion) VALUES ('"
-                + p.getNombre() + "','"
-                + p.getApellido() + "','"
-                + p.getTelefono() + "','"
-                + p.getCorreo() + "','"
-                + p.getDireccion() + "');";
+//////////        String cadena = "INSERT INTO cliente(nombre, apellido, telefono, correo, direccion) VALUES ('"
+//////////                + p.getNombre() + "','"
+//////////                + p.getApellido() + "','"
+//////////                + p.getTelefono() + "','"
+//////////                + p.getCorreo() + "','"
+//////////                + p.getDireccion() + "');";
         //System.out.println(cadena);
-        consulta.executeUpdate(cadena);
+//////////        consulta.executeUpdate(cadena);
         consulta.close();
     }
     public List<Cliente> listar() throws SQLException {
@@ -34,15 +35,15 @@ public class GestorClientes {
         List<Cliente> lista = new ArrayList<>();
 
         while (rs.next()) {
-            Cliente p = new Cliente(
-                    rs.getInt("id"),
-                    rs.getString("nombre"),
-                    rs.getString("apellido"),
-                    rs.getString("telefono"),
-                    rs.getString("correo"),
-                    rs.getString("direccion")
-            );
-            lista.add(p);
+//////////            Cliente p = new Cliente(
+//////////                    rs.getInt("id"),
+//////////                    rs.getString("nombre"),
+//////////                    rs.getString("apellido"),
+//////////                    rs.getString("telefono"),
+//////////                    rs.getString("correo"),
+//////////                    rs.getString("direccion")
+//////////            );
+//////////            lista.add(p);
         }
         rs.close();
         consulta.close();
@@ -53,14 +54,14 @@ public class GestorClientes {
         ResultSet rs = consulta.executeQuery("SELECT * FROM cliente WHERE id = " + id);
         Cliente p = null;
         if (rs.next()) {
-            p = new Cliente(
-                    rs.getInt("id"),
-                    rs.getString("nombre"),
-                    rs.getString("apellido"),
-                    rs.getString("telefono"),
-                    rs.getString("correo"),
-                    rs.getString("direccion")
-            );
+//////////            p = new Cliente(
+//////////                    rs.getInt("id"),
+//////////                    rs.getString("nombre"),
+//////////                    rs.getString("apellido"),
+//////////                    rs.getString("telefono"),
+//////////                    rs.getString("correo"),
+//////////                    rs.getString("direccion")
+//////////            );
         }
         rs.close();
         consulta.close();
@@ -72,15 +73,15 @@ public class GestorClientes {
         //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         //String strFechaFormateada = sdf.format(p.getFechaNacimiento());
         // String de actualización
-        String cadena = "UPDATE cliente SET "
-                + "nombre = '" + p.getNombre() + "', "
-                + "apellido = '" + p.getApellido() + "', "
-                + "telefono = '" + p.getTelefono() + "', "
-                + "correo = '" + p.getCorreo() + "', "
-                + "direccion = '" + p.getDireccion() + "' "
-                + "WHERE id = " + p.getId();
+//////////        String cadena = "UPDATE cliente SET "
+//////////                + "nombre = '" + p.getNombre() + "', "
+//////////                + "apellido = '" + p.getApellido() + "', "
+//////////                + "telefono = '" + p.getTelefono() + "', "
+//////////                + "correo = '" + p.getCorreo() + "', "
+//////////                + "direccion = '" + p.getDireccion() + "' "
+//////////                + "WHERE id = " + p.getId();
         // System.out.println(cadena);
-        consulta.executeUpdate(cadena);
+//////////        consulta.executeUpdate(cadena);
         consulta.close();
     }
     public void eliminar(int id) throws SQLException {

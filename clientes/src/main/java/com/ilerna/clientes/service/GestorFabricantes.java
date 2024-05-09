@@ -5,7 +5,6 @@
 package com.ilerna.clientes.service;
 
 import com.ilerna.clientes.database.Conexion;
-import com.ilerna.clientes.entity.Cliente;
 import com.ilerna.clientes.entity.Fabricante;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -26,12 +25,12 @@ public class GestorFabricantes {
         List<Fabricante> lista = new ArrayList<>();
 
         while (rs.next()) {
-            Fabricante p = new Fabricante(
-                    rs.getInt("id"),
-                    rs.getString("nombre"),
-                    rs.getInt("edad")
-            );
-            lista.add(p);
+//////////            Fabricante p = new Fabricante(
+//////////                    rs.getInt("id"),
+//////////                    rs.getString("nombre"),
+//////////                    rs.getInt("edad")
+//////////            );
+//////////            lista.add(p);
         }
         rs.close();
         consulta.close();

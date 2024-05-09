@@ -19,8 +19,4 @@ public class entrada {
         model.addAttribute("saludo", "hola mundo");
         return "./saludar";
     }
-
-
-
-
 }
