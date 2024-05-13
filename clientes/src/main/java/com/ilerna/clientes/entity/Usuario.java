@@ -4,6 +4,7 @@
  */
 package com.ilerna.clientes.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.NoArgsConstructor;
@@ -12,7 +13,7 @@ import lombok.NoArgsConstructor;
  *
  * @author Alumno
  */
-@Getter @Setter @NoArgsConstructor
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Usuario {
     
     // ATRIBUTOS
@@ -23,13 +24,6 @@ public class Usuario {
     
     
     // CONSTRUCTORES
-    public Usuario(int id, String nombre, String nombreUsuario, String contrasenia) {
-        this.id = id; 
-        this.nombre = nombre;
-        this.nombreUsuario = nombreUsuario;
-        this.contrasenia = contrasenia;
-    }
-
     public Usuario(String nombre, String nombreUsuario, String contrasenia) {
         this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
