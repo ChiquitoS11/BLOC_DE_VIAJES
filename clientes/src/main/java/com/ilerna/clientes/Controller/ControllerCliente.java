@@ -18,7 +18,7 @@ public class ControllerCliente {
     GestorClientes ge = new GestorClientes ();
     @GetMapping("/")
     public String crud(Model model){
-        String valorfinal="./cliente/listarcliente";
+        String valorfinal="./index";
         try {
             model.addAttribute("clientes", ge.listar());
         } catch (SQLException ex) {
