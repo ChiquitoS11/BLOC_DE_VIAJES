@@ -1,0 +1,9 @@
+com\santiago\red_social\MenuSesion.class
+com\santiago\red_social\dao\UserDAO.class
+database\DbConnection.class
+com\santiago\red_social\dao\MessageDAO.class
+com\santiago\red_social\model\Message.class
+com\santiago\red_social\service\UserService.class
+com\santiago\red_social\service\MessageService.class
+com\santiago\red_social\model\User.class
+com\santiago\red_social\Inicio.class
