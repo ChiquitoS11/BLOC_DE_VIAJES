@@ -1,5 +1,6 @@
 package com.appp.EL_GUSANITO.entity;
 
+import java.sql.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,14 +14,16 @@ import lombok.Setter;
 public class Publicacion {
     
     // ATRIBUTOS
-    int IDPublicacion;
-    String FechaSubida;
+    int IDPublicacion; // Autoincremental, no incluido en el constructor
+    String MensajeUsuario;
+    Date FechaSubida;
     
     // ATRIBUTOS EXTERNOS
     int IDUsuario;
     
     // CONSTRUCTORES
-    public Publicacion(String FechaSubida, int IDUsuario) {
+    public Publicacion(String MensajeUsuario, Date FechaSubida, int IDUsuario) {
+        this.MensajeUsuario = MensajeUsuario;
         this.FechaSubida = FechaSubida;
         this.IDUsuario = IDUsuario;
     }
