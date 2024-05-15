@@ -3253,6 +3253,57 @@
 		margin-top: -14em;
 	}
 
+/* Boton publicacion */
+
+	.primeraPublicacion{
+		background-color: #8f3cbe;
+  		color: #fff;
+  		border: none;
+		align-items: center;
+ 		padding: 10px 20px;
+  		font-size: 16px;
+  		cursor: pointer;
+  		transition: background-color 0.3s ease-out;
+	}
+	.primeraPublicacion:hover {
+		animation: pulse 1s infinite;
+	  }
+	  
+	  @keyframes pulse {
+		0% {
+		  background-color: #333;
+		}
+		50% {
+		  background-color: #ff69b4;
+		}
+		100% {
+		  background-color: #7a288a;
+		}
+	  }
+	  
+	  .primeraPublicacion:hover::after {
+		content: "";
+		position:relative;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-radius: 50%;
+		background-image: linear-gradient(to right, #ff69b4, #7a288a);
+		background-size: 200% 200%;
+		animation: gradient-move 1s infinite;
+	  }
+	  
+	  @keyframes gradient-move {
+		0% {
+		  background-position: 0% 50%;
+		}
+		100% {
+		  background-position: 100% 50%;
+		}
+	  }	
+
+
 /* Footer */
 
 	#footer {
