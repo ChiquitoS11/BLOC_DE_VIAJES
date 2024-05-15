@@ -14,18 +14,14 @@ public class Publicacion {
     
     // ATRIBUTOS
     int IDPublicacion;
-    String Mensaje;
     String FechaSubida;
-    String NombreUsuario;
     
     // ATRIBUTOS EXTERNOS
-    int IDUser;
+    int IDUsuario;
     
     // CONSTRUCTORES
-    public Publicacion(String Mensaje, String FechaSubida, String NombreUsuario, int IDUser) {
-        this.Mensaje = Mensaje;
+    public Publicacion(String FechaSubida, int IDUsuario) {
         this.FechaSubida = FechaSubida;
-        this.NombreUsuario = NombreUsuario;
-        this.IDUser = IDUser;
+        this.IDUsuario = IDUsuario;
     }
 }

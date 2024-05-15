@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author ChiquitoS11
  */
 @Controller
-public class PublicacionController {
-        @GetMapping("/publicacion")
+public class TestController {
+        @GetMapping("/test")
 	public String login_and_register(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-//		model.addAttribute("name", name);
-		return "./publicacion";
+		model.addAttribute("name", name);
+		return "./test";
 	}
 }
