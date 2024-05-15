@@ -1,4 +1,3 @@
-
 const container = document.getElementById('container');
 // const signInEmail = document.getElementById('signInEmail');
 // const signUpEmail = document.getElementById('signUpEmail');
