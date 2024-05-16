@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF; /* White background */
+}
+
+header {
+    background-image: url(/images/core_campus.png);
+    background-position: 1%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 20px;
+    text-align: center;
+    text-shadow: -1px 1px 2px #000,
+              1px 1px 2px #000,
+              1px -1px 0 #000,
+              -1px -1px 0 #000;
+}
+
+h1 {
+    color: #663399; /* Dark purple text */
+    font-size: 36px;
+}
+
+.professors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 3%;
+}
+
+.professor {
+    margin: 20px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #FFFFFF; /* White background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.container{
+    align-items: center;
+    padding: 2%;
+	width: 250px;
+	background-color: rgb(202, 161, 230);
+	border-radius: 5px;
+	transition: transform 0.3s ease-in-out;	
+	display: flex;
+	flex-direction: column;
+	min-height: 0;
+}
+.container:hover {
+	box-shadow: 0 0 20px rgba(165, 88, 216, 0.39), 0 0 20px rgba(255, 0, 242, 0.5);
+	transform: scale(1.1);
+  }
+
+.professor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.professor h2 {
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.professor p {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: #C7B8EA;
+    background-image: url(/images/logothecore-1.gif);
+    background-size: auto 100%;
+    padding: 30px;
+    margin: 3%;
+}
+.boton{
+    margin-top: 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inicio{
+    background-color: #8f3cbe;
+      color: #fff;
+      border: none;
+    align-items: center;
+     padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-out;
+}
+.inicio:hover {
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      background-color: #333;
+    }
+    50% {
+      background-color: #ff69b4;
+    }
+    100% {
+      background-color: #7a288a;
+    }
+  }
+  
+  .inicio:hover::after {
+    content: "";
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, #ff69b4, #7a288a);
+    background-size: 200% 200%;
+    animation: gradient-move 1s infinite;
+  }
+  
+  @keyframes gradient-move {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }	
