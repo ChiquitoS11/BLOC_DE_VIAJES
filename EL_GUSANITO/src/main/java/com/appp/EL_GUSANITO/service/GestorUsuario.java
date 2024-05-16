@@ -65,4 +65,29 @@ public class GestorUsuario {
         
         throw new Exception("Credenciales incorrectas");
     }
+    
+    // conseguir usuario por nombre de usuario
+    public Usuario getUsuario(String nombreUsuario) throws SQLException, Exception{
+        Statement stmt = con.getConnection().createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM usuario WHERE nombreUsuario LIKE '" + nombreUsuario + "';");
+        
+        System.out.println(nombreUsuario);
+        System.out.println("antes de empezar");
+        Usuario aMandar = null;
+        while (rs.next()) {
+            
+            System.out.println("entro");
+            aMandar = new Usuario(
+                        rs.getInt("IDUsuario"),
+                        rs.getString("nombre"),
+                        rs.getString("nombreUsuario"),
+                        rs.getString("contrasenia")
+            );
+
+        }
+        System.out.println("ya se escribio");
+//        Usuario aMandar = new Usuario(rs.getInt("IDUsuario"), rs.getString("nombre"), rs.getString("nombreUsuario"), rs.getString("contrasenia"));
+        rs.close();
+        return aMandar;
+    }
 }

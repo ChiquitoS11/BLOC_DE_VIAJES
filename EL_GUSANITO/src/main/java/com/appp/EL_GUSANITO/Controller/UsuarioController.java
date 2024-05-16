@@ -66,6 +66,6 @@ public class UsuarioController {
                 return "redirect:/login-register-loginbad";
             }
 
-            return "redirect:/principal/inicio";
+            return "redirect:/principal/inicio?usuarioActual=" + nombreUsuario;
         }
 }
