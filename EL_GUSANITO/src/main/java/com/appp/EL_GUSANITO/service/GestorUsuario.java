@@ -9,6 +9,8 @@ import com.appp.EL_GUSANITO.entity.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -30,5 +32,22 @@ public class GestorUsuario {
         
         consulta.executeUpdate(cadena);
         consulta.close();
+    }
+    
+    // NO SE REPITA USUARIO
+    public void isRepetido(String nombreUsuario) throws SQLException, Exception{
+        Statement stmt = con.getConnection().createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM usuario");
+
+        while (rs.next()) {
+            System.out.println(nombreUsuario);
+            System.out.println(rs.getString("nombreUsuario"));
+            if (rs.getString("nombreUsuario").equalsIgnoreCase(nombreUsuario)) {
+                System.out.println("error");
+                throw new Exception("Nombre de usuario repetido");
+            }
+
+        }
+        rs.close();
     }
 }
