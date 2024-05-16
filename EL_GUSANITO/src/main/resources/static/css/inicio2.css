@@ -1,0 +1,91 @@
+/* sidebar.css */
+
+/* Adjust the positioning and margin for the sidebars */
+#left-sidebar, #right-sidebar {
+    width: 18%; /* Reduced width */
+    background-color: rgba(70, 80, 200, 0.8); /* Slightly different color for the sidebars */
+    height: 100vh; /* Extend to the end of the page */
+    position: fixed;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+    z-index: 999; /* Ensure sidebars appear below the header */
+    top: 0; /* Adjust the position to start at the top */
+    border-right: 2px solid #555; /* Add border to the right side */
+}
+
+#left-sidebar {
+    left: 0; /* Adjust the position to start at the left */
+}
+
+#right-sidebar {
+    right: 0; /* Adjust the position to start at the right */
+    border-left: 2px solid #555; /* Add border to the left side */
+}
+
+/* Rotate each letter individually */
+#left-sidebar h2 {
+    display: inline-block;
+    font-size: 1.5em; /* Adjust font size as needed */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Adjust styles for each letter */
+#left-sidebar h2 span {
+    transform: rotate(-90deg); /* Rotate text counterclockwise */
+    transform-origin: left top; /* Set rotation origin to top-left */
+    margin: 0;
+    padding: 0;
+    display: block; /* Display each letter on a separate line */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Add margin bottom to create space between profile and attributes */
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    /* Placeholder background color */
+    margin-bottom: 20px;
+    border-radius: 0; /* Make the profile picture placeholder space square */
+}
+
+.datos_perfil {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.post-box {
+    width: calc(62% - 100px); /* Adjust width to occupy the remaining space after considering sidebar widths */
+    /* Adjust width as needed */
+    background-color: #f9f9f9;
+    /* Background color for the post box */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 20px;
+    margin-top: 20%;
+    margin-left: 20%; /* Adjust margin-left to start after the left sidebar */
+    margin-right: 2%; /* Adjust margin-right to leave space between post box and right sidebar */
+}
+
+/* Adjust the Header position */
+header#header {
+    background-color: rgba(70, 80, 200, 0.8); /* Set the background color */
+    z-index: 1000; /* Ensure the header stays on top */
+    position: fixed; /* Fixed position for the header */
+    width: 18%; /* Same width as the left and right sidebars */
+    padding: 20px;
+    box-sizing: border-box;
+    color: white; /* Set text color to white */
+    text-align: center; /* Center align the content */
+    left: 0; /* Position the header at the left */
+    top: 0; /* Position the header at the top of the viewport */
+    border-bottom: 2px solid #555; /* Add border to the bottom */
+    margin-bottom: 100px;
+}

@@ -27,11 +27,11 @@ public class UsuarioController {
         public String mostrar_Login_Register(Model model) {
             return "./usuario/login-register";
         }
-        @GetMapping("/login-register")
+        @GetMapping("/login-register-registerbad")
         public String mostrar_Login_Register_RegistroMal(Model model) {
             return "./usuario/login-register-registerbad";
         }
-        @GetMapping("/login-register")
+        @GetMapping("/login-register-loginbad")
         public String mostrar_Login_Register_LoginMal(Model model) {
             return "./usuario/login-register-loginbad";
         }
@@ -45,24 +45,27 @@ public class UsuarioController {
                 ge.alta(new Usuario(nombre, nombreUsuario, contrasenia));
             } catch (SQLException ex) {
                 Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+                return "redirect:/login-register-registerbad";
             } catch (Exception ex) {
                 Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
-                return "redirect:/login-register";
+                return "redirect:/login-register-registerbad";
             }
 
-            // Después de realizar la lógica de registro, puedes redirigir a una página de confirmación o a donde necesites
-            return "redirect:/test";
+            return "redirect:/login-register";
         }
         @PostMapping("/iniciarSeccion")
         public String iniciarSeccion(@RequestParam("nombreUsuarioLogin") String nombreUsuario, 
                                     @RequestParam("contraseniaLogin") String contrasenia) {
-//            try {
-//                
-//            } catch (SQLException ex) {
-//                Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
-//            }
+            try {
+                ge.isValido(nombreUsuario, contrasenia);
+            } catch (SQLException ex) {
+                Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+                return "redirect:/login-register-loginbad";
+            } catch (Exception ex) {
+                Logger.getLogger(UsuarioController.class.getName()).log(Level.SEVERE, null, ex);
+                return "redirect:/login-register-loginbad";
+            }
 
-            // Después de realizar la lógica de registro, puedes redirigir a una página de confirmación o a donde necesites
-            return "redirect:/test";
+            return "redirect:/principal/inicio";
         }
 }
