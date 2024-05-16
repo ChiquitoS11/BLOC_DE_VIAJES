@@ -40,8 +40,6 @@ public class GestorUsuario {
         ResultSet rs = stmt.executeQuery("SELECT * FROM usuario");
 
         while (rs.next()) {
-            System.out.println(nombreUsuario);
-            System.out.println(rs.getString("nombreUsuario"));
             if (rs.getString("nombreUsuario").equalsIgnoreCase(nombreUsuario)) {
                 System.out.println("error");
                 throw new Exception("Nombre de usuario repetido");
@@ -49,5 +47,22 @@ public class GestorUsuario {
 
         }
         rs.close();
+    }
+    
+    public void isValido(String nombreUsuario, String contrasenia) throws SQLException, Exception{
+        Statement stmt = con.getConnection().createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT * FROM usuario");
+
+        while (rs.next()) {
+            if (rs.getString("nombreUsuario").equalsIgnoreCase(nombreUsuario)) {
+                if (rs.getString("contrasenia").equalsIgnoreCase(contrasenia)) {
+                    return;
+                }
+            } 
+            
+        }
+        rs.close();
+        
+        throw new Exception("Credenciales incorrectas");
     }
 }
